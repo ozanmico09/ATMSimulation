@@ -26,7 +26,7 @@ public class Card {
             throw new CardBlockedException("Card is blocked. Please contact your bank.");
         }
 
-        if (!pinHash.equals(inputPin)){
+        if(!pinHash.equals(hashPin(inputPin))){
             failedAttempts++;
             if (failedAttempts >= MAX_ATTEMPTS){
                 status = CardStatus.BLOCKED;
