@@ -51,6 +51,8 @@ public class Card {
             throw new InvalidPinException("New PIN cannot be the same as the old PIN.");
         }
 
+        validatePin(oldPin);
+
         this.pinHash = hashPin(newPin);
         this.failedAttempts = 0;
     }
